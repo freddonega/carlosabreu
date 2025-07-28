@@ -16,7 +16,12 @@ export const UploadForm = ({ onUploadSuccess }: UploadFormProps) => {
     clearImages,
     isUploading,
     uploadError,
-  } = useImageUpload(onUploadSuccess);
+  } = useImageUpload(onUploadSuccess, () => {
+    // Reset do input de arquivo
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  });
 
   const handleFileInputChange = (
     event: React.ChangeEvent<HTMLInputElement>

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { UploadResponse } from "@/types/upload";
 
 export class ImageKitService {
@@ -27,23 +26,26 @@ export class ImageKitService {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await axios.post("/api/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
       });
 
-      if (response.data && response.data.success) {
-        return { success: true, url: response.data.url };
+      const data = await response.json();
+
+      if (data && data.success) {
+        return { success: true, url: data.url };
       } else {
         return {
           success: false,
-          error: response.data.error || "Erro no upload da imagem.",
+          error: data.error || "Erro no upload da imagem.",
         };
       }
     } catch (error) {
       console.error("Erro no upload:", error);
-      return { success: false, error: "Erro interno do servidor." };
+      const errorMessage =
+        error instanceof Error ? error.message : "Erro interno do servidor.";
+      return { success: false, error: errorMessage };
     }
   }
 

@@ -4,17 +4,17 @@ import { useState } from "react";
 import { UploadForm } from "./UploadForm";
 import { CarlosAnimation } from "./CarlosAnimation";
 import { Fireworks } from "./Fireworks";
+import { SuccessMessage } from "./SuccessMessage";
 
 export const ImageUpload = () => {
   const [showAnimation, setShowAnimation] = useState(false);
 
   const handleUploadSuccess = () => {
     setShowAnimation(true);
-    
-    // Reset da animação após 5 segundos
-    setTimeout(() => {
-      setShowAnimation(false);
-    }, 5000);
+  };
+
+  const handleCloseAnimation = () => {
+    setShowAnimation(false);
   };
 
   return (
@@ -64,8 +64,12 @@ export const ImageUpload = () => {
       </div>
 
       {/* Animações */}
-      <CarlosAnimation isActive={showAnimation} />
+      <CarlosAnimation
+        isActive={showAnimation}
+        onClose={handleCloseAnimation}
+      />
       <Fireworks isActive={showAnimation} />
+      <SuccessMessage isActive={showAnimation} />
     </div>
   );
 };

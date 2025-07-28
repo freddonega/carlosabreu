@@ -5,9 +5,13 @@ import { useEffect, useState } from "react";
 
 interface CarlosAnimationProps {
   isActive: boolean;
+  onClose?: () => void;
 }
 
-export const CarlosAnimation = ({ isActive }: CarlosAnimationProps) => {
+export const CarlosAnimation = ({
+  isActive,
+  onClose,
+}: CarlosAnimationProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -26,11 +30,11 @@ export const CarlosAnimation = ({ isActive }: CarlosAnimationProps) => {
   if (!isActive) return null;
 
   return (
-    <div className="fixed inset-0 z-40 pointer-events-none">
+    <div className="fixed inset-0 z-40">
       <div
-        className={`absolute bottom-0 right-0 transition-all duration-2000 ease-out ${
-          isVisible 
-            ? "translate-y-0 opacity-100 scale-100" 
+        className={`absolute inset-0 flex items-center justify-center transition-all duration-2000 ease-out ${
+          isVisible
+            ? "translate-y-0 opacity-100 scale-100"
             : "translate-y-full opacity-0 scale-75"
         }`}
         style={{
@@ -43,11 +47,33 @@ export const CarlosAnimation = ({ isActive }: CarlosAnimationProps) => {
           alt="Carlos"
           width={400}
           height={600}
-          className="object-contain max-h-screen"
+          className="object-contain max-h-screen max-w-full"
           priority
         />
       </div>
-      
+
+      {/* Botão de fechar */}
+      {isVisible && onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-8 right-8 z-50 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
+        >
+          <svg
+            className="w-6 h-6 text-rose-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      )}
+
       {/* Overlay gradiente para suavizar a transição */}
       <div
         className={`absolute inset-0 bg-gradient-to-t from-rose-100/50 via-transparent to-transparent transition-opacity duration-2000 ${
@@ -59,4 +85,4 @@ export const CarlosAnimation = ({ isActive }: CarlosAnimationProps) => {
       />
     </div>
   );
-}; 
+};

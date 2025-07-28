@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { ImageKitService } from "@/services/imagekit";
 import { ImageFile, UploadResponse } from "@/types/upload";
 
-export const useImageUpload = (onUploadSuccess?: () => void) => {
+export const useImageUpload = (onUploadSuccess?: () => void, onReset?: () => void) => {
   const [selectedImages, setSelectedImages] = useState<ImageFile[]>([]);
 
   const uploadMutation = useMutation({
@@ -18,6 +18,11 @@ export const useImageUpload = (onUploadSuccess?: () => void) => {
         console.log("Uploads bem-sucedidos:", successfulUploads.length);
         if (onUploadSuccess) {
           onUploadSuccess();
+        }
+        // Reset do formulário após upload bem-sucedido
+        setSelectedImages([]);
+        if (onReset) {
+          onReset();
         }
       }
 
