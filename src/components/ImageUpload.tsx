@@ -18,11 +18,11 @@ export const ImageUpload = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-8 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100 py-8 px-4 relative overflow-hidden">
       {/* Cabeçalho com sarcasmo */}
       <div className="text-center mb-12">
         <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-rose-400 to-pink-400 rounded-full flex items-center justify-center shadow-lg">
+          <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg">
             <svg
               className="w-8 h-8 text-white"
               fill="none"
@@ -38,10 +38,10 @@ export const ImageUpload = () => {
             </svg>
           </div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-serif text-rose-800 mb-4">
+        <h1 className="text-4xl md:text-5xl font-serif text-amber-800 mb-4">
           Nossos Momentos (Duvidosos) Especiais
         </h1>
-        <p className="text-lg text-rose-600 font-light">
+        <p className="text-lg text-amber-600 font-light">
           Mande aqui suas fotos — antes que a gente se arrependa de ter pedido
         </p>
       </div>
@@ -54,21 +54,21 @@ export const ImageUpload = () => {
       {/* Rodapé Sarcástico */}
       <div className="text-center mt-8">
         <div className="flex justify-center space-x-2 mb-4">
-          <div className="w-2 h-2 bg-rose-400 rounded-full"></div>
-          <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-          <div className="w-2 h-2 bg-rose-400 rounded-full"></div>
+          <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+          <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+          <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
         </div>
-        <p className="text-rose-600 font-light text-sm">
+        <p className="text-amber-600 font-light text-sm">
           ✨ Compartilhando momentos de amor, vergonha alheia e maquiagem
           derretida ✨
         </p>
-        <p className="text-rose-600 font-light text-sm">
+        <p className="text-amber-600 font-light text-sm">
           Feito com ❤️ pelo{" "}
           <span className="line-through opacity-50">palhaço do</span>{" "}
           <a
             href="https://freddonega.dev"
             target="_blank"
-            className="text-rose-600 font-bold"
+            className="text-amber-600 font-bold"
           >
             Fred Donega
           </a>

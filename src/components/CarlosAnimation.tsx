@@ -59,7 +59,7 @@ export const CarlosAnimation = ({
           className="absolute top-8 right-8 z-50 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
         >
           <svg
-            className="w-6 h-6 text-rose-600"
+            className="w-6 h-6 text-amber-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ export const CarlosAnimation = ({
 
       {/* Overlay gradiente para suavizar a transição */}
       <div
-        className={`absolute inset-0 bg-gradient-to-t from-rose-100/50 via-transparent to-transparent transition-opacity duration-2000 ${
+        className={`absolute inset-0 bg-gradient-to-t from-amber-100/50 via-transparent to-transparent transition-opacity duration-2000 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
         style={{

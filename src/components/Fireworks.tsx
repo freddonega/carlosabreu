@@ -23,14 +23,14 @@ export const Fireworks = ({ isActive }: { isActive: boolean }) => {
     if (!isActive) return;
 
     const colors = [
-      "#ff6b6b",
-      "#4ecdc4",
-      "#45b7d1",
-      "#96ceb4",
-      "#feca57",
-      "#ff9ff3",
-      "#54a0ff",
-      "#5f27cd",
+      "#d97706", // amber-600
+      "#ea580c", // orange-600
+      "#dc2626", // red-600
+      "#b45309", // amber-700
+      "#c2410c", // orange-700
+      "#991b1b", // red-800
+      "#92400e", // amber-800
+      "#9a3412", // orange-800
     ];
 
     const createFirework = (): Firework => {

@@ -36,7 +36,7 @@ export const SuccessMessage = ({ isActive }: SuccessMessageProps) => {
           marginBottom: "20px",
         }}
       >
-        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-rose-200 text-center max-w-sm">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-amber-200 text-center max-w-sm">
           <div className="flex justify-center mb-3">
             <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
               <svg
@@ -54,10 +54,10 @@ export const SuccessMessage = ({ isActive }: SuccessMessageProps) => {
               </svg>
             </div>
           </div>
-          <h3 className="text-lg font-serif text-rose-800 mb-1">
+          <h3 className="text-lg font-serif text-amber-800 mb-1">
             Recebemos aqui, valeu!
           </h3>
-          <p className="text-sm text-rose-600 font-light">
+          <p className="text-sm text-amber-600 font-light">
             Suas fotos foram enviadas com sucesso! ✨
           </p>
         </div>
